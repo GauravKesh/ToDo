@@ -2,7 +2,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import { Fade } from "react-reveal";
 import glogo from "../asset/image/myLogo.png";
 
 export default function Footer() {
@@ -16,7 +15,7 @@ export default function Footer() {
   const copyright_year = `Copyright © ${year}- All right reserved by GKR`;
   return (
     <div>
-      <Fade cascade>
+
         <footer class="text-gray-400 bg-gray-900 body-font">
           <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
             <a
@@ -106,7 +105,7 @@ export default function Footer() {
             </span>
           </div>
         </footer>
-      </Fade>
+
     </div>
   );
 }
