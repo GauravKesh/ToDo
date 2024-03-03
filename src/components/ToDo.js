@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-
 export default function Todo() {
   const [taskTittle, setTaskTittle] = useState("");
   const [taskDescription, setTaskDescription] = useState("");
@@ -23,7 +22,7 @@ export default function Todo() {
   }, 50);
 
   /* preventing right click */
-  //   document.addEventListener("contextmenu", (event) => event.preventDefault());
+    document.addEventListener("contextmenu", (event) => event.preventDefault());
   /* UPDATING TASK */
   const handleTaskList = () => {
     /* checking where all requird things are filled or not */
