@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-import { Zoom } from "react-reveal";
 
 export default function Todo() {
   const [taskTittle, setTaskTittle] = useState("");
@@ -435,7 +434,7 @@ export default function Todo() {
                     ? taskList.map((item, index) => {
                         return (
                           <div className="taskl " key={index}>
-                          <Zoom>
+                          
                             <div className="alert flex  overflow-x-auto ">
                               <div className="number-task text-2xl text-red-500">
                                 <strong>{index + 1}</strong>.
@@ -548,14 +547,14 @@ export default function Todo() {
                                 </button>
                               </div>
                             </div>
-                            </Zoom>
+                          
                           </div>
                         );
                       })
                     : completedTaskList.map((item, index) => {
                         return (
                           <div className="taskl " key={index}>
-                            <Zoom>
+                            
                               <div className="alert">
                                 <div className="number-task text-2xl text-red-500">
                                   <strong>{index + 1}</strong>.
@@ -602,7 +601,7 @@ export default function Todo() {
                                   </div>
                                 </div>
                               </div>
-                            </Zoom>
+                          
                           </div>
                         );
                       })}
