@@ -33,7 +33,6 @@ export default function Todo() {
       }, 800);
       setFormFillTask(true);
       setFormFillDescription(true);
-      const d = new Date();
       let now = new Date();
       let dd = now.getDate();
       const month = [
