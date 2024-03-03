@@ -3,24 +3,18 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import glogo from "../asset/image/myLogo.png";
+import { Fade } from "react-awesome-reveal";
 
 export default function Footer() {
   const d = new Date();
   let year = d.getFullYear();
-  const scrollToTargetClick = (targetId) => {
-    document.getElementById(targetId).scrollIntoView({
-      behavior: "smooth",
-    });
-  };
   const copyright_year = `Copyright © ${year}- All right reserved by GKR`;
   return (
     <div>
-
+      <Fade>
         <footer class="text-gray-400 bg-gray-900 body-font">
           <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-            <a
-              class="flex title-font font-medium items-center hover:cursor-pointer md:justify-start justify-center text-white"
-            >
+            <a class="flex title-font font-medium items-center hover:cursor-pointer md:justify-start justify-center text-white">
               <img className="w-11 rounded h-11" src={glogo} alt="logo" />
             </a>
             <p class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">
@@ -105,7 +99,7 @@ export default function Footer() {
             </span>
           </div>
         </footer>
-
+      </Fade>
     </div>
   );
 }
