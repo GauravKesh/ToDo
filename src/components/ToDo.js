@@ -279,13 +279,23 @@ export default function Todo() {
                     Total
                     <div className="badge badge-secondary ">{totalTask}</div>
                   </div>
-                  <div className="btn  cursor-default hover:text-red-500" >
+                  <div
+                    className="btn  cursor-default hover:text-red-500"
+                    onClick={() => {
+                      setShowCompleted(true);
+                    }}
+                  >
                     Completed
-                    <div className="badge badge-secondary" >
+                    <div className="badge badge-secondary">
                       {totalCompletedTask}
                     </div>
                   </div>
-                  <div className="btn cursor-default hover:text-red-500">
+                  <div
+                    className="btn cursor-default hover:text-red-500"
+                    onClick={() => {
+                      setShowCompleted(false);
+                    }}
+                  >
                     Remaining
                     <div className="badge badge-secondary">{taskRemaining}</div>
                   </div>
@@ -413,7 +423,7 @@ export default function Todo() {
                       tabIndex={0}
                       className="dropdown-content z-[1] card card-compact w-64 p-2 shadow bg-primary text-primary-content"
                     >
-                      <div className="card-body">
+                      <div className="card-body flex-wrap flex">
                         <h3 className="card-title">Reset Data </h3>
                         <p>Data once Deleted cannot be reverted</p>
                         <button
@@ -601,7 +611,6 @@ export default function Todo() {
                                 </div>
                               </div>
                             </Zoom>
-                                            
                           </div>
                         );
                       })}
