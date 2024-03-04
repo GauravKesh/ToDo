@@ -15,6 +15,7 @@ export default function Todo() {
   const [addAlert, setAddAlert] = useState(false);
   const [doneAlert, setDoneAlert] = useState(false);
   const [skipAlert, setskipAlert] = useState(false);
+  
   const [completedTaskList, setCompletedTaskList] = useState([]); // FOR COMPLETED TASK
   /* timeout function to calculate remaining tasks */
   setTimeout(() => {
