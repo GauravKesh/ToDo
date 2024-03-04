@@ -281,11 +281,11 @@ export default function Todo() {
                   </div>
                   <div className="btn  cursor-default hover:text-red-500" >
                     Completed
-                    <div className="badge badge-secondary" onClick={setShowCompleted(false)}>
+                    <div className="badge badge-secondary" >
                       {totalCompletedTask}
                     </div>
                   </div>
-                  <div className="btn cursor-default hover:text-red-500"onClick={setShowCompleted(false)}>
+                  <div className="btn cursor-default hover:text-red-500">
                     Remaining
                     <div className="badge badge-secondary">{taskRemaining}</div>
                   </div>
