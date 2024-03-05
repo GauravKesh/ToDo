@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Zoom } from "react-awesome-reveal";
 
+
 export default function Todo() {
   const [taskTittle, setTaskTittle] = useState(""); // FOR STORING TITTLE
   const [taskDescription, setTaskDescription] = useState(""); // FOR STORING DESCRIPTION
