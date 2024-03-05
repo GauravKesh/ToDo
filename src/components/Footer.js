@@ -12,29 +12,29 @@ export default function Footer() {
   return (
     <div>
       <Fade>
-        <footer class="text-gray-400 bg-gray-900 body-font">
-          <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-            <a class="flex title-font font-medium items-center hover:cursor-pointer md:justify-start justify-center text-white">
+        <footer className="text-gray-400 bg-gray-900 body-font">
+          <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+            <a className="flex title-font font-medium items-center hover:cursor-pointer md:justify-start justify-center text-white">
               <img className="w-11 rounded h-11" src={glogo} alt="logo" />
             </a>
-            <p class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">
+            <p className="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">
               {copyright_year}
               <a
-                class="text-gray-500 ml-1"
+                className="text-gray-500 ml-1"
                 target="_blank"
                 rel="noopener noreferrer"
               ></a>
             </p>
-            <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+            <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
               <a
-                class="ml-3 text-gray-400"
+                className="ml-3 text-gray-400"
                 href="https://www.github.com/gauravkesh"
                 target="_blank"
               >
                 <svg
                   // style={{ color: "white" }}
                   xmlns="http://www.w3.org/2000/svg"
-                  class="w-5 h-5"
+                  className="w-5 h-5"
                   fill="none"
                   viewBox="0 0 512 512"
                 >
@@ -45,7 +45,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                class="ml-3 text-white"
+                className="ml-3 text-white"
                 href="https://www.linkedin.com/in/gaurav-kesh-roushan-100b631aa/"
                 target="_blank"
               >
@@ -55,7 +55,7 @@ export default function Footer() {
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="0"
-                  class="w-5 h-5"
+                  className="w-5 h-5"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -66,13 +66,13 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                class=" ml-3 text-gray-400"
+                className=" ml-3 text-gray-400"
                 href="https://www.discord.com/users/hackedversion2.0"
                 target="_blank"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="w-5 h-5"
+                  className="w-5 h-5"
                   fill="none"
                   viewBox="0 0 640 512"
                 >
@@ -82,14 +82,14 @@ export default function Footer() {
                   ></path>
                 </svg>
               </a>
-              <a class="ml-3 text-white">
+              <a className="ml-3 text-white">
                 <svg
                   fill="none"
                   stroke="currentColor"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  class="w-5 h-5"
+                  className="w-5 h-5"
                   viewBox="0 0 24 24"
                 >
                   <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
