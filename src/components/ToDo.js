@@ -392,7 +392,7 @@ export default function Todo() {
             <div className="formarea">
               <br />
               <div className="inform flex flex-wrap flex-row">
-              {/*  */}
+              
                 <div className="task-status mb-3  space-x-1 ">
                   <div
                     className=" btn relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all  rounded hover: group"
@@ -411,15 +411,7 @@ export default function Todo() {
                       </div>
                     </span>
                   </div>
-                  {/*    <a
-                    href="#_"
-                    class="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-white rounded hover:bg-white group"
-                  >
-                    <span class="w-48 h-48 rounded rotate-[-40deg] bg-purple-600 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-                    <span class="relative w-full text-left text-black transition-colors duration-300 ease-in-out group-hover:text-white">
-                      Button Text
-                    </span>
-                  </a> */}
+                  
                   <div
                     className=" btn relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all  rounded hover: group"
                     onClick={() => {
@@ -667,7 +659,7 @@ export default function Todo() {
                       return (
                         <div className="taskl " key={index}>
                           <Zoom>
-                            <div className="alert flex  overflow-x-auto ">
+                            <div className="alert flex   ">
                               <div className="number-task text-2xl text-red-500">
                                 <strong>{index + 1}</strong>.
                               </div>
