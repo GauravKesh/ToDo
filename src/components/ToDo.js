@@ -18,6 +18,7 @@ export default function Todo() {
   const [showCompleted, setShowCompleted] = useState(false); // FOR SHOWING COMPLETED TASK
   const [showSkipped, setShowSkipped] = useState(false); // for showing skipped task
   const [showHistory, setShowHistory] = useState(false); // for showing history
+  const [showRemaining, setShowRemaining] = useState(false);
   const [addAlert, setAddAlert] = useState(false); // FOR ADD TASK alert
   const [doneAlert, setDoneAlert] = useState(false); // FOR COMPLETED TASK alert
   const [skipAlert, setskipAlert] = useState(false); // FOR SKIPPED TASK alert
@@ -80,6 +81,7 @@ export default function Todo() {
       );
       const taskhistory = historyCount + 1;
       setHistoryCount(taskhistory);
+      setShowHistory(false);
       localStorage.setItem("historycount", JSON.stringify(taskhistory));
     } else {
       if (taskTittle === "") {
@@ -397,6 +399,7 @@ export default function Todo() {
                       setShowCompleted(false);
                       setShowHistory(true);
                       setShowSkipped(false);
+                      setShowRemaining(false);
                     }}
                   >
                     Total
@@ -405,9 +408,10 @@ export default function Todo() {
                   <div
                     className="btn  cursor-default hover:text-red-500"
                     onClick={() => {
-                      setShowCompleted(false);
-                      setShowHistory(true);
+                      setShowCompleted(true);
+                      setShowHistory(false);
                       setShowSkipped(false);
+                      setShowRemaining(false);
                     }}
                   >
                     Completed
@@ -421,6 +425,7 @@ export default function Todo() {
                       setShowCompleted(false);
                       setShowHistory(false);
                       setShowSkipped(false);
+                      setShowRemaining(true);
                     }}
                   >
                     Remaining
@@ -432,6 +437,7 @@ export default function Todo() {
                       setShowCompleted(false);
                       setShowHistory(false);
                       setShowSkipped(true);
+                      setShowRemaining(false);
                     }}
                   >
                     Skipped
@@ -468,7 +474,7 @@ export default function Todo() {
                         setTaskTittle(e.target.value);
                       }}
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      placeholder="Please specify a tittle for your task"
+                      placeholder="Please specify a title for your task"
                       required
                     />
                   </div>
@@ -509,6 +515,10 @@ export default function Todo() {
                       onClick={() => {
                         handleTaskList();
                         handleHistory();
+                        setShowCompleted(false);
+                        setShowHistory(false);
+                        setShowSkipped(false);
+                        setShowRemaining(true);
                       }}
                       className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                     >
@@ -530,8 +540,10 @@ export default function Todo() {
                     <button
                       type="submit"
                       onClick={() => {
-                        setShowCompleted(false);
-                        setShowHistory(false);
+                          setShowCompleted(false);
+                          setShowHistory(false);
+                          setShowRemaining(true);
+                          setShowSkipped(false);
                       }}
                       className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-1.5 py-1.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                     >
@@ -544,6 +556,8 @@ export default function Todo() {
                       onClick={() => {
                         setShowCompleted(true);
                         setShowHistory(false);
+                        setShowRemaining(false);
+                        setShowSkipped(false);
                       }}
                       className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-1.5 py-1.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                     >
@@ -576,7 +590,7 @@ export default function Todo() {
                   </div>
                 </div>
                 <div className="all-todo  md:h-96 h-96   overflow-y-auto overflow-x-auto  md:overflow-auto">
-                  {!showCompleted &&
+                  {showRemaining &&
                     taskList.map((item, index) => {
                       return (
                         <div className="taskl " key={index}>
@@ -820,7 +834,7 @@ export default function Todo() {
                                     <p className="text-grey-300">
                                       <span className="text-red-400">
                                         <small>
-                                          completed on:- {item.skippedDate} at
+                                          skipped on:- {item.skippedDate} at
                                           <span></span>
                                           {item.skippedTime}
                                         </small>
