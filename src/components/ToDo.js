@@ -391,8 +391,7 @@ export default function Todo() {
             </div>
             <div className="formarea">
               <br />
-              <div className="inform flex flex-wrap flex-row">
-              
+              <div className="inform lex flex-wrap text-sm">
                 <div className="task-status mb-3  space-x-1 ">
                   <div
                     className=" btn relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all  rounded hover: group"
@@ -411,7 +410,7 @@ export default function Todo() {
                       </div>
                     </span>
                   </div>
-                  
+
                   <div
                     className=" btn relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all  rounded hover: group"
                     onClick={() => {
@@ -615,8 +614,15 @@ export default function Todo() {
                         Reset
                       </button>
                     </div>
+
                     <dialog id="my_modal_1" className="modal text-red-400">
                       <div className="modal-box">
+                        <form method="dialog">
+                          {/* if there is a button in form, it will close the modal */}
+                          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+                            ✕
+                          </button>
+                        </form>
                         <h3 className="font-bold text-lg text-red-500">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
