@@ -404,7 +404,7 @@ export default function Todo() {
                   >
                     <span class="w-48 h-48 rounded rotate-[-40deg] bg-blue-500 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
                     <span class="relative w-full text-left  transition-colors duration-300 ease-in-out group-hover:text-white">
-                      <span>Total</span>
+                      <span>History</span>
                       <div className=" ml-2 badge badge-secondary ">
                         {historyCount}
                       </div>
