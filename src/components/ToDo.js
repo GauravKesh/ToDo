@@ -78,7 +78,7 @@ export default function Todo() {
         "taskHistory",
         JSON.stringify(updatedTaskTodoListCopyHistory)
       );
-      const taskhistory = historyCount+ 1;
+      const taskhistory = historyCount + 1;
       setHistoryCount(taskhistory);
       localStorage.setItem("historycount", JSON.stringify(taskhistory));
     } else {
@@ -311,8 +311,8 @@ export default function Todo() {
     if (completed) {
       setCompletedTask(completed);
     }
-    if(historycounts){
-      setHistoryCount(historycounts);;
+    if (historycounts) {
+      setHistoryCount(historycounts);
     }
   }, []);
 
@@ -405,7 +405,9 @@ export default function Todo() {
                   <div
                     className="btn  cursor-default hover:text-red-500"
                     onClick={() => {
-                      setShowCompleted(true);
+                      setShowCompleted(false);
+                      setShowHistory(true);
+                      setShowSkipped(false);
                     }}
                   >
                     Completed
