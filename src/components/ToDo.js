@@ -392,9 +392,10 @@ export default function Todo() {
             <div className="formarea">
               <br />
               <div className="inform flex flex-wrap flex-row">
+              {/*  */}
                 <div className="task-status mb-3  space-x-1 ">
                   <div
-                    className="btn  cursor-default  hover:text-red-500"
+                    className=" btn relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all  rounded hover: group"
                     onClick={() => {
                       setShowCompleted(false);
                       setShowHistory(true);
@@ -402,11 +403,25 @@ export default function Todo() {
                       setShowRemaining(false);
                     }}
                   >
-                    Total
-                    <div className="badge badge-secondary ">{historyCount}</div>
+                    <span class="w-48 h-48 rounded rotate-[-40deg] bg-blue-500 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+                    <span class="relative w-full text-left  transition-colors duration-300 ease-in-out group-hover:text-white">
+                      <span>Total</span>
+                      <div className=" ml-2 badge badge-secondary ">
+                        {historyCount}
+                      </div>
+                    </span>
                   </div>
+                  {/*    <a
+                    href="#_"
+                    class="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-white rounded hover:bg-white group"
+                  >
+                    <span class="w-48 h-48 rounded rotate-[-40deg] bg-purple-600 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+                    <span class="relative w-full text-left text-black transition-colors duration-300 ease-in-out group-hover:text-white">
+                      Button Text
+                    </span>
+                  </a> */}
                   <div
-                    className="btn  cursor-default hover:text-red-500"
+                    className=" btn relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all  rounded hover: group"
                     onClick={() => {
                       setShowCompleted(true);
                       setShowHistory(false);
@@ -414,13 +429,16 @@ export default function Todo() {
                       setShowRemaining(false);
                     }}
                   >
-                    Completed
-                    <div className="badge badge-secondary">
-                      {totalCompletedTask}
-                    </div>
+                    <span class="w-48 h-48 rounded rotate-[-40deg] bg-blue-500 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+                    <span class="relative w-full text-left  transition-colors duration-300 ease-in-out group-hover:text-white">
+                      <span>Completed</span>
+                      <div className=" ml-2 badge badge-secondary ">
+                        {totalCompletedTask}
+                      </div>
+                    </span>
                   </div>
                   <div
-                    className="btn cursor-default hover:text-red-500"
+                    className=" btn relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all  rounded hover: group"
                     onClick={() => {
                       setShowCompleted(false);
                       setShowHistory(false);
@@ -428,11 +446,16 @@ export default function Todo() {
                       setShowRemaining(true);
                     }}
                   >
-                    Remaining
-                    <div className="badge badge-secondary">{taskRemaining}</div>
+                    <span class="w-48 h-48 rounded rotate-[-40deg] bg-blue-500 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+                    <span class="relative w-full text-left  transition-colors duration-300 ease-in-out group-hover:text-white">
+                      <span>Remaining</span>
+                      <div className=" ml-2 badge badge-secondary ">
+                        {taskRemaining}
+                      </div>
+                    </span>
                   </div>
                   <div
-                    className="btn cursor-default hover:text-red-500"
+                    className=" btn relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all  rounded hover: group"
                     onClick={() => {
                       setShowCompleted(false);
                       setShowHistory(false);
@@ -440,8 +463,13 @@ export default function Todo() {
                       setShowRemaining(false);
                     }}
                   >
-                    Skipped
-                    <div className="badge badge-secondary">{taskSkipped}</div>
+                    <span class="w-48 h-48 rounded rotate-[-40deg] bg-blue-500 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+                    <span class="relative w-full text-left  transition-colors duration-300 ease-in-out group-hover:text-white">
+                      <span>Skipped</span>
+                      <div className=" ml-2 badge badge-secondary ">
+                        {taskSkipped}
+                      </div>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -454,7 +482,7 @@ export default function Todo() {
                       htmlFor="Task"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Task<strong className="text-red-900"> *</strong>{" "}
+                      Task<strong className="text-red-900"> *</strong>
                       <strong
                         className={`${
                           formFillTask ? "hidden" : "visible text-red-500"
@@ -520,9 +548,29 @@ export default function Todo() {
                         setShowSkipped(false);
                         setShowRemaining(true);
                       }}
-                      className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                      class="relative inline-flex items-center justify-center p-4 px-6 py-1 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-red-500 rounded-full shadow-md group"
                     >
-                      Add Task
+                      <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-blue-500 group-hover:translate-x-0 ease">
+                        <svg
+                          class="w-6 h-6 text-gray-800 dark:text-white"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M5 12h14m-7 7V5"
+                          />
+                        </svg>
+                      </span>
+                      <span class="absolute flex items-center justify-center w-full h-full text-blue-500 transition-all duration-300 transform group-hover:translate-x-full ease">
+                        Add Task
+                      </span>
+                      <span class="relative invisible">Add Task</span>
                     </button>
                   </div>
                 </div>
@@ -540,10 +588,10 @@ export default function Todo() {
                     <button
                       type="submit"
                       onClick={() => {
-                          setShowCompleted(false);
-                          setShowHistory(false);
-                          setShowRemaining(true);
-                          setShowSkipped(false);
+                        setShowCompleted(false);
+                        setShowHistory(false);
+                        setShowRemaining(true);
+                        setShowSkipped(false);
                       }}
                       className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-1.5 py-1.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                     >
@@ -566,27 +614,51 @@ export default function Todo() {
                   </div>
                   <div className=" dropdown">
                     <div className=" add-btn mb-5  pl-2 text-nowrap ">
-                      <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-1.5 py-1.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                      <button
+                        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-1.5 py-1.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        onClick={() =>
+                          document.getElementById("my_modal_1").showModal()
+                        }
+                      >
                         Reset
                       </button>
                     </div>
-                    <div
-                      tabIndex={0}
-                      className="dropdown-content z-[1] card card-compact w-64 p-2 shadow bg-primary text-primary-content"
-                    >
-                      <div className="card-body flex-wrap flex">
-                        <h3 className="card-title">Reset Data </h3>
-                        <p>Data once Deleted cannot be reverted</p>
-                        <button
-                          onClick={() => {
-                            handleReset();
-                          }}
-                          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-1.5 py-1.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                        >
-                          Reset
-                        </button>
+                    <dialog id="my_modal_1" className="modal text-red-400">
+                      <div className="modal-box">
+                        <h3 className="font-bold text-lg text-red-500">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="stroke-current shrink-0 h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                            />
+                          </svg>
+                          Warning
+                        </h3>
+                        <p className="pt-2">
+                          * Each and every data will be deleted.
+                        </p>
+                        <p>* Data once Deleted cannot be reverted.</p>
+                        <div className="modal-action">
+                          <form method="dialog">
+                            <button
+                              className="btn"
+                              onClick={() => {
+                                handleReset();
+                              }}
+                            >
+                              Reset Data
+                            </button>
+                          </form>
+                        </div>
                       </div>
-                    </div>
+                    </dialog>
                   </div>
                 </div>
                 <div className="all-todo  md:h-96 h-96   overflow-y-auto overflow-x-auto  md:overflow-auto">
